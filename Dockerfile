@@ -1,4 +1,4 @@
-FROM dockerfile/java:oracle-java8
+FROM openjdk:8-jdk-alpine
 VOLUME /tmp
 ADD target/spring-boot-aws-exe.jar target/app.jar
 RUN bash -c 'touch target/app.jar'
