@@ -1,4 +1,4 @@
-FROM openjdk:8-jdk-alpine
-VOLUME /tmp
-ADD target/spring-boot-aws-exe.jar target/app.jar
-ENTRYPOINT ["java","-jar","target/app.jar"]
+FROM openjdk:8
+ADD target/spring-boot-aws-exe.jar app.jar
+EXPOSE 8080
+ENTRYPOINT ["java","-jar","app.jar"]
