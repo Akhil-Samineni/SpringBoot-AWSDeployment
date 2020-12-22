@@ -1,5 +1,5 @@
-FROM openjdk:8-jdk-alpine
+FROM dockerfile/java:oracle-java8
 VOLUME /tmp
-ARG JAR_FILE
-COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+ADD target/spring-boot-aws-exe.jar target/app.jar
+RUN bash -c 'touch target/app.jar'
+ENTRYPOINT ["java","-jar","target/app.jar"]
